@@ -174,7 +174,7 @@
     .iconBtn.hidden { display: none; }
 
     #muteBtn  { top: 12px; right: 12px; }
-    #pauseBtn { top: 12px; left: 12px; }
+    #pauseBtn { top: 12px; right: 12px; }
     #boardBtn { bottom: 12px; right: 12px; font-size: 17px; }
     #closeBoardBtn {
       bottom: 12px; left: 12px;
@@ -482,8 +482,8 @@ function syncButtons(){
   const canClose = phase===P.BOARD && prevPhase!==P.DEAD && prevPhase!==P.START;
   closeBoardBtn.classList.toggle('hidden', !canClose);
 
-  // Sidebar: only on START/DEAD -- BOARD phase uses full-screen canvas
-  var showSidebar = (phase===P.START || phase===P.DEAD)
+  // Sidebar: only on DEAD screen
+  var showSidebar = (phase===P.DEAD)
   sb.classList.toggle('sb-visible', showSidebar);
 }
 
