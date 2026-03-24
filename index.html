@@ -482,8 +482,8 @@ function syncButtons(){
   const canClose = phase===P.BOARD && prevPhase!==P.DEAD && prevPhase!==P.START;
   closeBoardBtn.classList.toggle('hidden', !canClose);
 
-  // Sidebar: show when on START or DEAD screens (idle), hide during gameplay
-  const showSidebar = (phase===P.START || phase===P.DEAD || phase===P.BOARD);
+  // Sidebar: only on START/DEAD -- BOARD phase uses full-screen canvas
+  var showSidebar = (phase===P.START || phase===P.DEAD)
   sb.classList.toggle('sb-visible', showSidebar);
 }
 
